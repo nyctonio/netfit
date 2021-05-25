@@ -3,7 +3,7 @@ import React from 'react'
 export default function Footer() {
     return (
         <div>
-            <footer class="relative bg-gray-300 pt-8 pb-6">
+            <footer id="f" class="relative bg-gray-300 pt-8 pb-6">
       <div
         class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
         style={{"height": "80px"}}
@@ -63,25 +63,25 @@ export default function Footer() {
                 >
                 <ul class="list-unstyled">
                   <li>
-                    <a href=""
+                    <a href="#f"
                       class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
                       >About Us</a
                     >
                   </li>
                   <li>
-                    <a href=""
+                    <a href="#f"
                       class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
                       >Blog</a
                     >
                   </li>
                   <li>
-                    <a href=""
+                    <a href="#f"
                       class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
                       >Github</a
                     >
                   </li>
                   <li>
-                    <a href=""
+                    <a href="#f"
                       class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
                       >Free Products</a
                     >
@@ -95,25 +95,25 @@ export default function Footer() {
                 >
                 <ul class="list-unstyled">
                   <li>
-                    <a href=""
+                    <a href="#f"
                       class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
                       >MIT License</a
                     >
                   </li>
                   <li>
-                    <a href=""
+                    <a href="#f"
                       class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
                       >Terms &amp; Conditions</a
                     >
                   </li>
                   <li>
-                    <a href=""
+                    <a href="#f"
                       class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
                       >Privacy Policy</a
                     >
                   </li>
                   <li>
-                    <a href=""
+                    <a href="#f"
                       class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
                       >Contact Us</a
                     >
@@ -130,10 +130,9 @@ export default function Footer() {
           <div class="w-full md:w-4/12 px-4 mx-auto text-center">
             <div class="text-sm text-gray-600 font-semibold py-1">
               Copyright © 2021 Netfit
-              <a href=""
+              <a href="#f"
                 class="text-gray-600 hover:text-gray-900"
-                > Pvt limited</a
-              >.
+                > Pvt limited</a>.
             </div>
           </div>
         </div>
