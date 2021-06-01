@@ -24,7 +24,7 @@ export default function Header() {
 
             <div class="items-center md:flex">
                 <div class="flex flex-col md:flex-row md:mx-6">
-                    <p class="my-1 text-md font-medium text-white dark:text-gray-200 hover:text-gray-200 dark:hover:text-indigo-400 md:mx-4 md:my-0" ><Link to="/">Home</Link></p>
+                    <p class="my-1 text-md font-medium text-white dark:text-gray-200 hover:text-gray-200 dark:hover:text-indigo-400 md:mx-4 md:my-0" ><Link to="/signin">SignIn</Link></p>
                     <p class="my-1 text-md font-medium text-white dark:text-gray-200 hover:text-gray-200 dark:hover:text-indigo-400 md:mx-4 md:my-0" ><Link to="/shop">Shop</Link> </p>
                     <p class="my-1 text-md font-medium text-white dark:text-gray-200 hover:text-gray-200 dark:hover:text-indigo-400 md:mx-4 md:my-0" ><Link to="/diet">DietPlan</Link></p>
                     <p class="my-1 text-md font-medium text-white dark:text-gray-200 hover:text-gray-200 dark:hover:text-indigo-400 md:mx-4 md:my-0" ><Link to="/workout">WorkOut</Link> </p>

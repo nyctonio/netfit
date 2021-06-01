@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import {Home,Cart,Diet,Shop,Workout,CategoryPage} from './components'
+import {Home,Cart,Diet,Shop,Workout,CategoryPage,SignIn} from './components'
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
           <Route path="/diet" exact component={Diet} />
           <Route path="/workout" exact component={Workout} />
           <Route path="/cart" exact component={Cart} />
+          <Route path="/signin" exact component={SignIn} />
           <Route path="/shop/:ctg" exact component={CategoryPage}/>
         </Switch>
       </Router>
