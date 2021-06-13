@@ -1,6 +1,4 @@
 import React from 'react'
-import Header from '../Boilerplate/Header'
-import Footer from '../Boilerplate/Footer'
 import Category from '../Boilerplate/Category'
 
 const category=[
@@ -15,11 +13,9 @@ const category=[
 export default function Cart() {
     return (
         <div>
-            <Header/>
             <div class="flex flex-wrap pl-10 md:items-center md:pl-26 ">
             {category.map((e)=>{return <Category img={e[2]} link={e[1]} name={e[0]} />})}
             </div>
-            <Footer/>
         </div>
     )
 }

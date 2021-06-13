@@ -1,6 +1,4 @@
 import React from 'react'
-import Header from '../Boilerplate/Header'
-import Footer from '../Boilerplate/Footer'
 import Blog from '../Boilerplate/Blog'
 
 
@@ -147,9 +145,7 @@ const content=[['http://s3.amazonaws.com/img.mynetdiary.com/blog/low-carb-diet.j
 export default function Cart() {
     return (
         <div>
-            <Header/>
             {content.map((e)=>{return <Blog img={e[0]} heading={e[1]} content={e[2]} />})}
-            <Footer/>
         </div>
     )
 }

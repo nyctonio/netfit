@@ -1,6 +1,4 @@
 import React from 'react'
-import Header from '../Boilerplate/Header'
-import Footer from '../Boilerplate/Footer'
 import Blog from '../Boilerplate/Blog'
 
 const content=[["https://images.unsplash.com/photo-1479156731157-e883d1bd10d0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2089&q=80","Exercise for Chest",
@@ -107,10 +105,8 @@ const content=[["https://images.unsplash.com/photo-1479156731157-e883d1bd10d0?ix
 export default function Cart() {
     return (
         <div>
-            <Header/>
             <h1 class="text-3xl bold ml-10 mt-10">Exercises</h1>
             {content.map((e)=>{return <Blog img={e[0]} heading={e[1]} content={e[2]} />})}
-            <Footer/>
         </div>
     )
 }
