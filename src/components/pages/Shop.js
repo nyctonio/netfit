@@ -13,7 +13,7 @@ const category=[
 export default function Cart() {
     return (
         <div>
-            <div class="flex flex-wrap pl-10 md:items-center md:pl-26 ">
+            <div class="flex flex-wrap md:items-center justify-center">
             {category.map((e)=>{return <Category img={e[2]} link={e[1]} name={e[0]} />})}
             </div>
         </div>
