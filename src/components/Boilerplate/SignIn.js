@@ -6,11 +6,11 @@ import {Link} from 'react-router-dom'
 export default class SignIn extends Component {
     constructor(props){
         super(props);
-
+        
         
         this.state={
             'email':'',
-            'password':'',
+            'password':''
         }
     }
     
@@ -33,7 +33,7 @@ export default class SignIn extends Component {
         this.setState({[name]:value})
     }
 
-    SIGNIN=()=>{
+    render(){
         return(
             <div id="c" class="p-10 mt-5 mb-10">
     
@@ -104,7 +104,4 @@ export default class SignIn extends Component {
         )
     }
 
-    render() {
-        return(<this.SIGNIN/>)
-    }
 }

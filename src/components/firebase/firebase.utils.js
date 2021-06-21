@@ -2,6 +2,7 @@ import firebase from 'firebase/app'
 import 'firebase/firestore'
 import 'firebase/auth'
 
+// our web api keys
 const config = {
     apiKey: "AIzaSyDRi8-HZIdFw7ImeJM4Tg7kyIaB262tMks",
     authDomain: "netfit-91b8f.firebaseapp.com",
@@ -11,6 +12,7 @@ const config = {
     appId: "1:67201879440:web:eaf132b80904227d2d7715"
 }
 
+// creating auth and saving in the firestore
 export const createUserProfileDocument = async (userAuth, additionalData) => {
     if(!userAuth) return;
     

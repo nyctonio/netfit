@@ -1,8 +1,15 @@
 import React from 'react'
+
+// for routing
 import {Link} from 'react-router-dom'
+
+// authentication
 import {auth} from '../firebase/firebase.utils'
 
-export default function Header({currentUser}) {
+// connecting redux
+import {connect} from 'react-redux'
+
+const Header = ({currentUser})=> {
     return (
         <div>
             
@@ -50,3 +57,11 @@ export default function Header({currentUser}) {
         </div>
     )
 }
+
+// redux mapStateToProps connection
+const mapStateToProps = state =>({
+    currentUser:state.user.currentUser
+})
+
+// pasing currentUser in the props of Header from redux store connect is a higher level component
+export default connect(mapStateToProps)(Header);

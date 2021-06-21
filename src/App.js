@@ -1,37 +1,81 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { Switch, Route } from "react-router-dom"
+// importing all the pages from the pages folder
 import {Header,Footer,Home,Cart,Diet,Shop,Workout,CategoryPage,SignInPage,SignUpPage} from './components'
+
+// importing auth for authentication and createUserProfileDocument for firebase database
 import {auth,createUserProfileDocument} from './components/firebase/firebase.utils'
 
-export default class App extends Component {
-  constructor(){
-    super();
+// connecting redux
+import {connect} from 'react-redux'
+import {setCurrentUser} from './redux/user/user.actions'
+
+
+class App extends Component {
+
+  // USED BEFORE ADDITION OF REDUX
+
+  
+  
+  // constructor(){
+  //   super();
     
-    this.state={
-      currentUser:null
-    }
-  }
+  //   this.state={
+  //     currentUser:null
+  //   }
+  // }
+
+  // unsubscribeFromAuth = null;
+
+  // componentDidMount(){
+  //   this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth=>{
+     
+  //     if(userAuth){
+  //     const userRef = await createUserProfileDocument(userAuth);
+    
+  //     userRef.onSnapshot(snapShot=>{
+  //       this.setState({
+  //         currentUser:{
+  //           id:snapShot.id,
+  //           ...snapShot.data()
+  //         }
+  //       },()=>{
+  //         console.log(this.state)
+  //       })
+  //     })
+  //   }else{
+  //     this.setState({currentUser:userAuth})
+  //   }
+    
+  // })
+  // }
+
+  // componentWillUnmount(){
+  //   this.unsubscribeFromAuth();
+  // }
+
+
+
+
+  // AFTER ADDITION OF REDUX
 
   unsubscribeFromAuth = null;
 
   componentDidMount(){
+    const {setCurrentUser}=this.props;
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth=>{
-     
+           
       if(userAuth){
       const userRef = await createUserProfileDocument(userAuth);
     
       userRef.onSnapshot(snapShot=>{
-        this.setState({
-          currentUser:{
+        setCurrentUser({
             id:snapShot.id,
             ...snapShot.data()
-          }
-        },()=>{
-          console.log(this.state)
         })
       })
     }else{
-      this.setState({currentUser:userAuth})
+      setCurrentUser(userAuth)
     }
     
   })
@@ -44,8 +88,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-      <Router>
-        <Header currentUser={this.state.currentUser} />
+        <Header/>
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/shop" exact component={Shop} />
@@ -57,8 +100,17 @@ export default class App extends Component {
           <Route path="/shop/:ctg" exact component={CategoryPage} />
         </Switch>
         <Footer/>
-      </Router>
     </div>
     )
   }
 }
+
+// dispatch is a function which helps redux to know that whateveris being passed is going to be an action
+// object 
+const mapDispatchToProps = dispatch =>({
+  setCurrentUser:user=>dispatch(setCurrentUser(user))
+})
+
+
+// passing a function in the props so that we can change the currentUser
+export default connect(null,mapDispatchToProps)(App)

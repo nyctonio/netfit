@@ -21,7 +21,7 @@ export default function Hero() {
             </div>
             
             <div className="w-full h-64 md:w-1/2 md:h-auto">
-                <div className="w-full h-full bg-cover" style={{"background-image": "url(https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1394&q=80)"}}>
+                <div className="w-full h-full bg-cover" style={{"background-image": "url(https://images.unsplash.com/photo-1599447332412-6bc6830c815a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=982&q=80)"}}>
                     <div className="w-full h-full bg-black opacity-25"></div>
                 </div>
             </div>
