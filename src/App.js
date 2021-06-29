@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Switch, Route } from "react-router-dom"
+import { Switch, Route,Redirect } from "react-router-dom"
 // importing all the pages from the pages folder
 import {Header,Footer,Home,Cart,Diet,Shop,Workout,CategoryPage,SignInPage,SignUpPage} from './components'
 
@@ -95,8 +95,8 @@ class App extends Component {
           <Route path="/diet" exact component={Diet} />
           <Route path="/workout" exact component={Workout} />
           <Route path="/cart" exact component={Cart} />
-          <Route path="/signin" exact component={SignInPage} />
-          <Route path="/signup" exact component={SignUpPage} />
+          <Route path="/signin" render={()=>this.props.currentUser ? (<Redirect to="/"/>):(<SignInPage/>)} />
+          <Route path="/signup" render={()=>this.props.currentUser ? (<Redirect to="/"/>):(<SignUpPage/>)} />
           <Route path="/shop/:ctg" exact component={CategoryPage} />
         </Switch>
         <Footer/>
@@ -104,6 +104,13 @@ class App extends Component {
     )
   }
 }
+
+
+// redux mapStateToProps connection
+const mapStateToProps = ({user}) =>({
+  currentUser:user.currentUser
+})
+
 
 // dispatch is a function which helps redux to know that whateveris being passed is going to be an action
 // object 
@@ -113,4 +120,4 @@ const mapDispatchToProps = dispatch =>({
 
 
 // passing a function in the props so that we can change the currentUser
-export default connect(null,mapDispatchToProps)(App)
+export default connect(mapStateToProps,mapDispatchToProps)(App)
