@@ -16,7 +16,10 @@ class CategoryPage extends Component {
     <div>
         <p class="text-5xl uppercase mt-10 ml-10" onClick={()=>{this.props.history.push('/shop')}} >{this.props.match.params.ctg}</p>
             <div class="flex flex-wrap items-center justify-evenly">
-                {data[ctg].map((e)=>{return <Card name={e[0]} details={e[1]} price={e[2]} img={e[3]}/>})}
+                {data[ctg].map((e)=>{
+                  const item ={id:e[0].id,name:e[0].name,details:e[0].details, price:e[0].price,img:e[0].img}
+                  return (<Card item={item}/>)
+                })}
             </div>
     </div>
     );
